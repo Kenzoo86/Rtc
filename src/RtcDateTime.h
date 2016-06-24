@@ -65,6 +65,13 @@ public:
         RtcDateTime after = RtcDateTime( TotalSeconds() + seconds );
         *this = after;
     }
+    
+    // sub seconds
+    void operator -= (uint32_t seconds)
+    {
+        RtcDateTime after = RtcDateTime( TotalSeconds() - seconds );
+        *this = after;
+    }
 
     // allows for comparisons to just work (==, <, >, <=, >=, !=)
     operator uint32_t() const 
